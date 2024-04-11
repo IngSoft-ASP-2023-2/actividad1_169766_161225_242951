@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "e8325874-2e31-4f76-ae52-299757136013",
+		"name": "actividad1ASP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15885042"
+	},
+	"item": [
+		{
+			"name": "crear tarea",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"task_id\": 2,\n  \"nombre\": \"Tarea 2\",\n  \"descripcion\": \"Tarea 2 facil\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tareas",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tareas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear nota",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n  \"nota_id\":  1,\n  \"nombre_estudiante\": \"Roberto\",\n  \"valor_numerico\" : 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tareas/1/notas",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tareas",
+						"1",
+						"notas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener notas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tareas/2/notas",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tareas",
+						"2",
+						"notas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
