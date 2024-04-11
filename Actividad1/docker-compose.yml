@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  task-manager:
+    build:
+      context: .
+    tty: true
+    ports:
+      - "3000:3000"
+    environment:
+      - MYSQL_DB=actividad_1
+      - MYSQL_USER=admin
+      - MYSQL_PW=adminadmin
+      - MYSQL_HOST=movie-manager.cz0s4asag2cb.us-east-1.rds.amazonaws.com
+      - PORT=3000
+    networks:
+      - actividad1
+
+  mysqlDB:
+    image: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=task-manager
+      - MYSQL_ROOT_PASSWORD=admin
+    networks:
+      - actividad1
+
+
+networks:
+  actividad1:
